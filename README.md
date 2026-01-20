@@ -43,7 +43,7 @@ Data-Standardization-and-Cleansing-Framework-using-Python/
 
 ---
 
-## 📄 Input Dataset
+## Input Dataset
 The raw dataset intentionally contains real-world data quality issues such as:
 - Mixed date formats (`YYYY-MM-DD`, `DD/MM/YYYY`, `YYYY/MM/DD`)
 - Invalid dates (e.g., month = 13)
@@ -54,7 +54,7 @@ The raw dataset intentionally contains real-world data quality issues such as:
 
 ---
 
-## ✅ Data Standardization
+## Data Standardization
 The framework standardizes:
 - **Dates** → ISO format (`YYYY-MM-DD`)
 - **Amounts** → Numeric float values
@@ -62,7 +62,7 @@ The framework standardizes:
 
 ---
 
-## ✅ Data Validation
+## Data Validation
 Validation rules are defined in `schema.json` and include:
 - Customer ID pattern enforcement
 - Required field checks
@@ -74,7 +74,7 @@ Each invalid record is tagged with detailed issue reasons in a `dq_issues` colum
 
 ---
 
-## 📊 Outputs Generated
+## Outputs Generated
 After execution, the following outputs are produced:
 
 | File | Description |
