@@ -1,0 +1,151 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Data Quality Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    h1 { margin-bottom: 4px; }
+    .muted { color: #666; margin-top: 0; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin: 16px 0; }
+    table { border-collapse: collapse; }
+    th { background: #f3f3f3; }
+  </style>
+</head>
+<body>
+  <h1>Data Quality Report</h1>
+  <p class="muted">Generated: 2026-01-20 15:23:59</p>
+
+  <div class="card">
+    <h2>Summary</h2>
+    <ul>
+      <li><b>Total rows:</b> 11</li>
+      <li><b>Valid rows:</b> 4</li>
+      <li><b>Invalid rows:</b> 7</li>
+      <li><b>Invalid %:</b> 63.64%</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Top Issues</h2>
+    <table border='1' cellpadding='6' cellspacing='0'><tr><th>Issue</th><th>Count</th></tr><tr><td>pattern:customer_id</td><td>1</td></tr><tr><td>invalid_date</td><td>1</td></tr><tr><td>negative_amount</td><td>1</td></tr><tr><td>invalid_currency</td><td>1</td></tr><tr><td>missing_country</td><td>1</td></tr><tr><td>invalid_amount</td><td>1</td></tr><tr><td>invalid_status</td><td>1</td></tr></table>
+  </div>
+
+  <div class="card">
+    <h2>Invalid Records Preview (first 20)</h2>
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>customer_id</th>
+      <th>transaction_date</th>
+      <th>amount</th>
+      <th>currency</th>
+      <th>country</th>
+      <th>status</th>
+      <th>transaction_date_std</th>
+      <th>amount_std</th>
+      <th>amount_parse_error</th>
+      <th>dq_issues</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A1</td>
+      <td>1/7/2025</td>
+      <td>1,250.50</td>
+      <td>INR</td>
+      <td>India</td>
+      <td>PAID</td>
+      <td>2025-07-01</td>
+      <td>1250.5</td>
+      <td></td>
+      <td>pattern:customer_id</td>
+    </tr>
+    <tr>
+      <td>QWER5678</td>
+      <td>2025-13-01</td>
+      <td>100</td>
+      <td>USD</td>
+      <td>United States</td>
+      <td>PAID</td>
+      <td>NaN</td>
+      <td>100.0</td>
+      <td></td>
+      <td>invalid_date</td>
+    </tr>
+    <tr>
+      <td>ASDF9999</td>
+      <td>7/5/2025</td>
+      <td>-50</td>
+      <td>USD</td>
+      <td>United States</td>
+      <td>PAID</td>
+      <td>2025-05-07</td>
+      <td>-50.0</td>
+      <td></td>
+      <td>negative_amount</td>
+    </tr>
+    <tr>
+      <td>GHJK0000</td>
+      <td>7/6/2025</td>
+      <td>2500</td>
+      <td>EURO</td>
+      <td>France</td>
+      <td>PAID</td>
+      <td>2025-06-07</td>
+      <td>2500.0</td>
+      <td></td>
+      <td>invalid_currency</td>
+    </tr>
+    <tr>
+      <td>BNMM2222</td>
+      <td>7/7/2025</td>
+      <td>300</td>
+      <td>INR</td>
+      <td></td>
+      <td>PAID</td>
+      <td>2025-07-07</td>
+      <td>300.0</td>
+      <td></td>
+      <td>missing_country</td>
+    </tr>
+    <tr>
+      <td>TYUI1111</td>
+      <td>7/8/2025</td>
+      <td>abc</td>
+      <td>USD</td>
+      <td>United States</td>
+      <td>PAID</td>
+      <td>2025-08-07</td>
+      <td>NaN</td>
+      <td>not_numeric</td>
+      <td>invalid_amount</td>
+    </tr>
+    <tr>
+      <td>LMNO3333</td>
+      <td>7/10/2025</td>
+      <td>500</td>
+      <td>USD</td>
+      <td>United States</td>
+      <td>UNKNOWN</td>
+      <td>2025-10-07</td>
+      <td>500.0</td>
+      <td></td>
+      <td>invalid_status</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+  <div class="card">
+    <h2>Output Files</h2>
+    <ul>
+      <li>outputs/standardized_preview.csv</li>
+      <li>outputs/cleaned_data.csv</li>
+      <li>outputs/invalid_records.csv</li>
+      <li>outputs/data_quality_report.html</li>
+    </ul>
+  </div>
+</body>
+</html>

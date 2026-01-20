@@ -1,0 +1,8 @@
+﻿customer_id,transaction_date,amount,currency,country,status,transaction_date_std,amount_std,amount_parse_error,dq_issues
+A1,1/7/2025,"1,250.50",INR,India,PAID,2025-07-01,1250.5,,pattern:customer_id
+QWER5678,2025-13-01,100,USD,United States,PAID,,100.0,,invalid_date
+ASDF9999,7/5/2025,-50,USD,United States,PAID,2025-05-07,-50.0,,negative_amount
+GHJK0000,7/6/2025,2500,EURO,France,PAID,2025-06-07,2500.0,,invalid_currency
+BNMM2222,7/7/2025,300,INR,,PAID,2025-07-07,300.0,,missing_country
+TYUI1111,7/8/2025,abc,USD,United States,PAID,2025-08-07,,not_numeric,invalid_amount
+LMNO3333,7/10/2025,500,USD,United States,UNKNOWN,2025-10-07,500.0,,invalid_status

@@ -1,0 +1,5 @@
+﻿customer_id,transaction_date,amount,currency,country,status,transaction_date_std,amount_std,amount_parse_error,dq_issues
+AB12,7/1/2025,1200,INR,India,PAID,2025-01-07,1200.0,,
+ZXCV1234,7/3/2025,₹ 899.99,INR,India,PENDING,2025-03-07,899.99,,
+POIU4444,7/11/2025,450,EUR,Germany,PAID,2025-11-07,450.0,,
+ZXAS5555,7/12/2025,750,USD,United States,FAILED,2025-12-07,750.0,,
