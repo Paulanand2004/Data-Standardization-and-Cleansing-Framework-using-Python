@@ -3,12 +3,16 @@ import os
 import json
 import pandas as pd
 
+#-------------INGEST-------------
+
 df = pd.read_csv(
     "data/raw_data1.csv",
     dtype=str,
     keep_default_na=False,
     encoding="utf-8-sig"
 )
+
+# ----------STANDARDIZE ----------
 
 dt = pd.to_datetime(df["transaction_date"], errors="coerce", dayfirst=True)
 df["transaction_date_std"] = dt.dt.strftime("%Y-%m-%d")
@@ -46,7 +50,7 @@ os.makedirs("outputs", exist_ok=True)
 df.to_csv("outputs/standardized_preview.csv", index=False, encoding="utf-8-sig")
 print("Saved: outputs/standardized_preview.csv")
 
-# ---------- STEP 5: VALIDATION ----------
+# ----------VALIDATION ----------
 
 import json
 
@@ -105,7 +109,7 @@ print("\nSaved: outputs/cleaned_data.csv and outputs/invalid_records.csv")
 
 from datetime import datetime
 
-# ---------- STEP 6: HTML DATA QUALITY REPORT ----------
+# ----------HTML DATA QUALITY REPORT ----------
 def issue_counts(series):
     counts = {}
     for cell in series.fillna(""):
